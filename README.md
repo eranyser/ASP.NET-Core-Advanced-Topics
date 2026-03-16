@@ -6,3 +6,6 @@ Main concepts in ASP.NET Core
     - [Unified Programming Model](./InitialConcepts/Documents/asp.net_core_benefits_01.md)
     - [More Features](./InitialConcepts/Documents/asp.net_core_benefits_02.md)
 3. [Creating a new Project](./InitialConcepts/Documents/creating_new_web_api_project_03.md)
+4. [Program.cs file](/InitialConcepts/Documents/program.cs_file_04.md)
+5. [InProcess model](./InitialConcepts/Documents/in_process_hosting_model_05.md)
+6. [OutOfProcess model](./InitialConcepts/Documents/out_of_process_hosing_model_06.md)
