@@ -13,7 +13,7 @@ To configure *InProcess* hosting, **(the default configuration)**, we set in the
   <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
 </PropertyGroup>
 ```
-As can be read [***here***](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/in-process-hosting?view=aspnetcore-10.0), In process hosting model means the *CreateDefaultBuilder* adds an IServer instance by calling the UseIIS method to boot the CoreCLR and host the app inside of the IIS worker process (w3wp.exe or iisexpress.exe).
+As can be read [***Here - In-process hosting with IIS and ASP.NET Core***](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/in-process-hosting?view=aspnetcore-10.0), In process hosting model means the *CreateDefaultBuilder* adds an IServer instance by calling the ***UseIIS()*** method to boot the CoreCLR and host the app inside of the IIS worker process (w3wp.exe or iisexpress.exe).
 
 With InProcess hosting, there is only one web server and that is the IIS server that hosts our application.
 

@@ -2,26 +2,21 @@
 
 ASP.NET core application initially starts as a console application and the Main() method in Program.cs file is the entry point. 
 
-- var builder = WebApplication.CreateBuilder(args);
-    - Creates a WebApplicationBuilder object that is used to configure services and middleware for the application. The args parameter contains command-line arguments passed to the application.
-- builder.Services.AddControllers();
-    - Registers controller services in the dependency injection (DI) container. This enables the framework to instantiate and manage controllers.
-- builder.Services.AddOpenApi();
-    - Adds OpenAPI (Swagger) support to the application, which enables automatic API documentation and a web UI to interact with your API endpoints.
-- var app = builder.Build();
-    - Builds and creates the WebApplication instance based on all the services and configurations that were registered with the builder.
-- if (app.Environment.IsDevelopment())
-    - Conditionally checks if the application is running in the development environment (as opposed to production, staging, etc.).
-- app.MapOpenApi();
-    - Maps the OpenAPI endpoint, making it accessible only in development. This provides the Swagger UI and API documentation.
-- app.UseHttpsRedirection();
-    - Adds middleware that automatically redirects all HTTP requests to HTTPS for security.
-- app.UseAuthorization();
-    - Adds authorization middleware to enforce authorization policies on protected endpoints.
-- app.MapControllers();
-    - Maps all controller routes to the application's request pipeline so incoming requests are routed to the appropriate controller actions.
-- app.Run();
-    - Starts the web server and begins listening for incoming HTTP requests. This is a blocking call that keeps the application running.
+- ```var builder = WebApplication.CreateBuilder(args);```
+    - Creates a WebApplicationBuilder object that is used to configure services and middleware for the application, such as: ***logging, dependency injection, Kestrel*** etc. The args parameter contains command-line arguments passed to the application.
+- ```var app = builder.Build();```
+    - Builds and creates the WebApplication instance, (this is actually the host that hosts our ASP.NET Core Web application), based on all the services and configurations that were registered with the builder. This composes the service provider and creates the middleware/endpoint infrastructure used to handle requests.
+- ```app.MapGet("/", () => System.Diagnostics.Process.GetCurrentProcess().ProcessName);``` Registers a minimal-API endpoint for HTTP GET at path /. The lambda is the request handler and returns a string, the current process name. Under the hood ASP.NET Core wires this into the routing/endpoint system so a GET to / invokes this handler.
+- ```app.Run();``` - Starts the web server and begins listening for incoming HTTP requests. This is a blocking call that keeps the application running, (it runs the server loop until shutdown).
+
+### Notes / behavior summary
+ - MapGet is provided by ASP.NET Core and extends WebApplication. 
+    - It registers an HTTP GET endpoint in the application's routing system.
+    - 
+ - MapGet only configures the handler; ```Run()``` actually starts the server.
+ - The handler return value (string) is written to the response body with appropriate headers by the framework.
+ - CreateBuilder + Build apply many framework defaults (routing middleware, DI, logging, configuration) so you don't have to call ```UseRouting()``` or similar manually for this minimal setup.
+
 
 
 | | | |

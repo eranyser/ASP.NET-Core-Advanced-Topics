@@ -17,5 +17,5 @@ With out of forces hosting:
 
 | | | |
 |-|-|-|
-[![Home](../../Documents/Images/home_button.svg)](../../README.md) | [![Previous](../../Documents/Images/back_button.svg)](./in_process_hosting_model_05.md) | [![Next](../../Documents/Images/next_button.svg)](../../README.md) |
+[![Home](../../Documents/Images/home_button.svg)](../../README.md) | [![Previous](../../Documents/Images/back_button.svg)](../Documents/in_process_hosting_model_05.md) | [![Next](../../Documents/Images/next_button.svg)](./Kestrel_07.md) |
 | | | 
