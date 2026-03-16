@@ -9,3 +9,6 @@ Main concepts in ASP.NET Core
 4. [Program.cs file](/InitialConcepts/Documents/program.cs_file_04.md)
 5. [InProcess model](./InitialConcepts/Documents/in_process_hosting_model_05.md)
 6. [OutOfProcess model](./InitialConcepts/Documents/out_of_process_hosing_model_06.md)
+7. [Kestrel](./InitialConcepts/Documents/Kestrel_07.md)
+8. [launchsettings](./InitialConcepts/Documents/launchsettings_08.md)
+
