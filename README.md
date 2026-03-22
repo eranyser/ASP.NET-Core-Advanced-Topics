@@ -12,4 +12,5 @@ Main concepts in ASP.NET Core
 7. [Kestrel](./InitialConcepts/Documents/Kestrel_07.md)
 8. [launchsettings](./InitialConcepts/Documents/launchsettings_08.md)
 9. [appsettings.json](./InitialConcepts/Documents/appsettings.jaon_09.md)
+10. [Middleware](./InitialConcepts/Documents/middleware_10.md)
 

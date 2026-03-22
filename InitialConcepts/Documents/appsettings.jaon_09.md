@@ -8,6 +8,8 @@ In ASP.NET Core application configuration settings can come from the following 
 - **Environment variables**
 - **Command-line arguments**
 
+**The latest configuration source overwrite previous configuration source. If same *Key* exists in both *appsettings.json* and as an *Envionment Varaible*, the *Environment Variable* orerwrites the one in *appsettings.json* file**
+
 The **appsettings.json**, (or **appsettings.***development***.json**) were created during the project cteation.
 
 - In this file we can set new configurations for our application, It is set in a *key, value* pairs in a **JSON** format. Let's add, for example, new key named ***MyKey***:
@@ -47,5 +49,5 @@ The **appsettings.json**, (or **appsettings.***development***.json**) were creat
 
 | | | |
 |-|-|-|
-[![Home](../../Documents/Images/home_button.svg)](../../README.md) | [![Previous](../../Documents/Images/back_button.svg)](./launchsettings_08.md) | [![Next](../../Documents/Images/next_button.svg)](../../README.md) |
+[![Home](../../Documents/Images/home_button.svg)](../../README.md) | [![Previous](../../Documents/Images/back_button.svg)](./launchsettings_08.md) | [![Next](../../Documents/Images/next_button.svg)](./middleware_10.md) |
 | | |  
