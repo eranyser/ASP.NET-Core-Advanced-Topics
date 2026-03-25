@@ -13,4 +13,5 @@ Main concepts in ASP.NET Core
 8. [launchsettings](./InitialConcepts/Documents/launchsettings_08.md)
 9. [appsettings.json](./InitialConcepts/Documents/appsettings.jaon_09.md)
 10. [Middleware](./InitialConcepts/Documents/middleware_10.md)
+11. Static Files
 
