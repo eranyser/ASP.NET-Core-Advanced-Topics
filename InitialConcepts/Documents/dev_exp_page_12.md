@@ -94,7 +94,7 @@ var app = builder.Build();
 
 1. [ASP NET Core developer exception page](https://www.youtube.com/watch?v=UGG2-oV9iQ8&list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU&index=14)
 
-    [![](https://i.ytimg.com/vi/UGG2-oV9iQ8/hqdefault.jpg?sqp=-oaymwEmCKgBEF5IWvKriqkDGQgBFQAAiEIYAdgBAeIBCggYEAIYBjgBQAE=&rs=AOn4CLDNsLsTDlMXjpeaZv441xoCi-c7Ig)
+    [![](https://i.ytimg.com/vi/UGG2-oV9iQ8/hqdefault.jpg?sqp=-oaymwEmCKgBEF5IWvKriqkDGQgBFQAAiEIYAdgBAeIBCggYEAIYBjgBQAE=&rs=AOn4CLDNsLsTDlMXjpeaZv441xoCi-c7Ig)](https://www.youtube.com/watch?v=UGG2-oV9iQ8&list=PL6n9fhu94yhVkdrusLaQsfERmL_Jh4XmU&index=14)
 
 
 
