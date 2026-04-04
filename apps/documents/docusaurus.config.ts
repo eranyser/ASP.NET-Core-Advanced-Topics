@@ -46,7 +46,7 @@ const config: Config = {
           editUrl:
             'https://github.com/eranyser/ASP.NET-Core-Advanced-Topics/tree/main/apps/documents/docs/',
         },
-        blog: false, /*{
+        blog:  {
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
@@ -60,7 +60,7 @@ const config: Config = {
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
-        },*/
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
