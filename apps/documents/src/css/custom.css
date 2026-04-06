@@ -35,6 +35,6 @@
 
 /* When the same footnote is referenced multiple times, Docusaurus renders one
    “back to content” arrow per reference. Keep the first arrow, hide the rest. */
-[data-footnote-definition] [data-footnote-backref]:not(:first-of-type) {
+section[data-footnotes] a.data-footnote-backref ~ a.data-footnote-backref {
   display: none;
 }
