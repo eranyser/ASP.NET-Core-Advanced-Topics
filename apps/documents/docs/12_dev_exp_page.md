@@ -3,7 +3,7 @@
 When exception occurs on server and we are in development environment, it is best to get the error in the browser. For this we have the *DeveloperExecptionPage* middleware.
 
 In earlier styles, prior **minimal hosting**, (which means *WebApplication.CreateBuilder*), The writing style was **generic host + Startup** (or **ConfigureWebHostDefualts**). In this style we had to register the *DeveloperExecptionPage* middlware in the *Statup.Configure* method:
-```c#
+```csharp
 public class Program
 {
     public static void Main(string[] args) =>
@@ -35,7 +35,7 @@ public class Startup
 In the newer **minimal hosting** style ASP.NET Core has [automatically registered UseDeveloperExceptionPage()](https://github.com/dotnet/aspnetcore/pull/34616) at the start of the pipeline when the environment is Development, so we don't need to register it to the pipeline by ourselfes. It is already there.
 
 Assuem the following code, where *UseDeveloperExceptionPage* middlware is already in the pipeline, we throw an exeption from the custom middlware:
-```c#
+```csharp
 public static void Main(string[] args)
 {
     var builder = WebApplication.CreateBuilder(args);
@@ -67,7 +67,7 @@ This page contains exception detais like:
 Like most other middleware components in ASP.NET Core, we can also customize *UseDeveloperExceptionPage* middleware. Whenever you want to customize a middleware component, always remember you may have the respective OPTIONS object. So, to Customize UseDeveloperExceptionPage middleware, use DeveloperExceptionPageOptions.
 
 In the old style **generic host + Startup**, when we register the middlware by ourselfs we use:
-```c#
+```csharp
 if (env.IsDevelopment())
 {
     app.UseDeveloperExceptionPage(new DeveloperExceptionPageOptions
@@ -77,7 +77,7 @@ if (env.IsDevelopment())
 }
 ```
 With minimal hosting, WebApplication can inject UseDeveloperExceptionPage() for you, but that middleware still uses ```IOptions<DeveloperExceptionPageOptions>``` under the hood. So you configure it the same way as most other options: before builder.Build().
-```c#
+```csharp
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<DeveloperExceptionPageOptions>(options =>
 {

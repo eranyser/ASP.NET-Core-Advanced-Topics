@@ -9,7 +9,7 @@ Middleware is a piece of software that can handle an HTTP request or response. A
 
 The following code set up a simple request processing pipeline with only one middleware. The only thing the application can do is write a message to the response object that will be displayed in the browser.
 
-```c#
+```csharp
 public class Program
 {
     public static void Main(string[] args)
@@ -30,7 +30,7 @@ public class Program
 - Pay attention the two *app.Run()* methods the first on comes from [RunExtensions.Run](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.runextensions.run?view=aspnetcore-10.0), this is an extention method and the second comes from [WebApplication.Run](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.webapplication.run?view=aspnetcore-10.0) this is a method of *WebApplication* that runs the app and blocks the calling thread until host shutdown.
 - With this *app.Run()* extension method we can add only a terminal middleware to the request pipeline. A terminal middleware is a middleware that does not call the next middleware in the pipeline
 - If we want the middleware to call the next middleware in the pipeline, we do it by register the middleware with the *Use()* method:
-    ```c#
+    ```csharp
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);

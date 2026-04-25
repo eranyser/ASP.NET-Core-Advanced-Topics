@@ -11,7 +11,7 @@
   ![Default Rouging 1](../images/default_routing_2.png)
 - Since we didn’t configure any routing rules, the question is how we navigate to the controller and the action.
 In the Porgram.cs file we can have the following code:
-  ```c#
+  ```csharp
   var builder = WebApplication.CreateBuilder(args);
   var app = builder.Build();
   // Configure middleware here
@@ -23,12 +23,12 @@ In the Porgram.cs file we can have the following code:
   app.Run();
   ```
  - if we want to use only attribute routing, we can call ***MapControllers*** instead of ***MapDefaultControllerRoute***. The *MapControllers()* is a shorthand method that combines ```UseRouting(), UseAuthorization(), and UseEndpoints(endpoints => { endpoints.MapControllers(); });``` into a single call. It's a convenient way to add these middleware components if you're building a minimal API type of application where you don't need to configure other middleware components between routing and endpoints.
-   ```c#
+   ```csharp
    app.MapControllers();
    ```
  - Thie ***MapController*** call enables **routing**, **authorization**, and map the **attribute-routed controllers**.
  - In order to define custom routes we can use the following:
-   ```c#
+   ```csharp
    var builder = WebApplication.CreateBuilder(args);
    var app = builder.Build();
    // Configure middleware here
@@ -49,7 +49,7 @@ In the Porgram.cs file we can have the following code:
 - The Route() attribute is specified 2 times on the *GetAllEmployees()* action method. With each instance of the Route() attribute we specified a different route template. With these two routes templates in place, the *GetAllEmployees()* action method of the **EmployeeController** will be executed for any of the following two URL paths:
   - /employee
   - /employee/all
-  ```c#
+  ```csharp
   [HttpGet]
   [Route("")]
   [Route("all")]
@@ -59,7 +59,7 @@ In the Porgram.cs file we can have the following code:
   }  
   ```
  - Of course we can specify paremeters in *attribute routing* as in the following method:
-   ```c#
+   ```csharp
    [HttpGet]
    [Route("{id:int}", Name = "GetSpecificEmployee")]
    public IActionResult GetEmployeeById(int id)
@@ -72,11 +72,11 @@ In the Porgram.cs file we can have the following code:
    }
    ```
   - Route attribute can include several elemente in the Route:
-    ```c#
+    ```csharp
     [Route("specific/{id:int}"])
     ```
   - If we want specific action to be executed when we navigate to the root URL with need to add **'/'** to the route rules:
-    ```c#
+    ```csharp
     [Route("/"])
     ```
   - Attribute routes support token replacement by enclosing a token in square-braces ([ ]). The tokens **[controller]** and **[action]** are replaced with the values of the controller name and action name where the route is defined. 

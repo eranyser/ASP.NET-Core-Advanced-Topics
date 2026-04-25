@@ -29,7 +29,7 @@ You can set:
  - env var: MySettings__ApiKey=123
 
 and bind MySettings using 
-```c# 
+```csharp 
 builder.Services.Configure<MySettings>(...).
 ```
 : isn’t allowed in environment variable names on many systems, so __ is the standard workaround.

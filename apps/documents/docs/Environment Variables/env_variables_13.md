@@ -5,7 +5,7 @@ In ASP.NET Core you generally have two good ways to read an environment variable
 ### Recommended: via IConfiguration (works with env vars + appsettings)
 
 In minimal hosting:
-```c#
+```csharp
 var value = builder.Configuration["MyEnvVarName"];
 // or
 var value2 = builder.Configuration.GetValue<string>("MyEnvVarName");
@@ -15,14 +15,14 @@ If the env var is a key like [MySettings__ApiKey (note the __)](./env_variables_
 ### Directly: ```Environment.GetEnvironmentVariable```
 
 This reads only the OS environment variable:
-```c#
+```csharp
 var value = Environment.GetEnvironmentVariable("MyEnvVarName");
 ```
 
 ### Common example
 
 To read teh environment name itself:
-```c#
+```csharp
 var envName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 ```
 
@@ -76,11 +76,11 @@ It’s used for conditional behavior, like:
 
 For “real settings” (recommended)
 Use IConfiguration (or options binding):
-```C#
+```csharp
 var value = builder.Configuration["SomeEnvVarName"];
 ```
 Or bind strongly-typed options:
-```C#
+```csharp
 builder.Services.Configure<MySettings>(
     builder.Configuration.GetSection("MySettings"));
 ```
@@ -90,7 +90,7 @@ This is best because it works whether the value comes from env vars or JSON, and
 
 #### For environment name / dev-vs-prod checks
 Inject IHostEnvironment (or use app.Environment):
-```c#
+```csharp
 if (app.Environment.IsDevelopment())
 {
     // dev-only behavior
@@ -98,7 +98,7 @@ if (app.Environment.IsDevelopment())
 ```
 #### For direct env var lookup (simple/edge cases)
 Use .NET directly:
-```c#
+```csharp
 var v = Environment.GetEnvironmentVariable("SomeEnvVarName");
 ```
 This bypasses IConfiguration layering (and you’ll handle precedence yourself), so it’s less common in ASP.NET Core apps.

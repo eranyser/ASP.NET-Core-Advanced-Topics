@@ -4,7 +4,7 @@
 - The default directory for static files is ***wwwroot*** and this directory must be in the root project folder
 - In order to serve static files the request processing pipeline must have the required middleware that can serve the Static Files.
 - We will add the *UseStaticFiles()* middleware to our application's request processing pipeline as shown below.
-    ```c#
+    ```csharp
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
@@ -37,7 +37,7 @@
     - default.htm
     - default.html
 - If we want to use another document like ***foo.html*** as the default, we can use the *Option* class and supply it to the middleware:
-    ```C#
+    ```csharp
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);

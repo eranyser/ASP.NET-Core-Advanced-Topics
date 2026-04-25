@@ -5,7 +5,7 @@
 - A controller gathers together, in a simple class, all c# methods that implement a set of logically connected web  APIs. We put together things that logically belong together in a single class and we call this class a controller.
 - The controller in a Web API **inherits from ControllerBase.** This marks this class to be ASP.NET Core Controller. ControllerBase is the base class for all API Controllers.
 - Additionally, in order to tell ASP.NET Core that we really want to write Web API, we need to specify the attribute **[ApiController]**
-  ```c#
+  ```csharp
   [ApiController]
   public class ToDoItemsController : ControllerBase
   {
@@ -22,7 +22,7 @@
 
   - For the whole *Controller*, we can use:
     - **[Route("[controller]")]** - Token attribute. 
-      ```c#
+      ```csharp
       [ApiController]
       [Route("[controller]")]
       public class ToDoItemsController : ControllerBase
@@ -32,7 +32,7 @@
       ```
       When we say controller in the path we mean to use the name of the class without the suffix controller. For example, in the Class *ToDoItemController*, we can navigate to **http://localhost:5000/ToDoItems**
     - **[Route("api/todo-items")]** - We can specify our own route to the whole controller. I.e we can navigate to **http://localhost:5000/api/todo-items**
-      ```c#
+      ```csharp
       [ApiController] 
       [Route("api/todo-items")]
       public class ToDoItemsController : ControllerBase
@@ -56,7 +56,7 @@
 
 ## Lets add some APIs
 
-  ```c#
+  ```csharp
   namespace ToDoItems.Controllers
   {
     [ApiController]
@@ -87,7 +87,7 @@
   - To get the *items* List according current *routing rules* we use: https://localhost:5000/api/todo-items
 
 - Let's add the method to get an item by its *index*
-  ```c#
+  ```csharp
   [HttpGet]
   [Route("{index}", Name = "GetSpecificItem")]
   public IActionResult GetItem(int index)
@@ -103,7 +103,7 @@
 
 - Now lets add the method *AddItem*
 
-    ```c#
+    ```csharp
 		[HttpPost]
 		public IActionResult AddItem([FromBody] string newItem)
 		{
@@ -118,7 +118,7 @@
     - **More reading and explanations:** [Created, CreatedAtAction, CreatedAtRoute Methods In ASP.NET Core Explained With Examples](https://ochzhen.com/blog/created-createdataction-createdatroute-methods-explained-aspnet-core)
 
 - Lets add the *UpdateItem* method
-    ```c#
+    ```csharp
     [HttpPut]
     [Route("{index}")]
     public IActionResult UpdateItem(int index, [FromBody] string newItem)
@@ -137,7 +137,7 @@
   
 - *DeleteItem* will look like this:
 
-    ```c#
+    ```csharp
     [HttpDelete] 
     [Route("{index}")]
     public IActionResult DeleteItem(int index)
@@ -154,7 +154,7 @@
 - As we saw the **[FromBody]** attribute that tells .NET that the data comes from the body of the requeset, we can set the attribute **[From Query]** to indicate, for a parameter, that it comes from the query string. A query string comes after a question mark.
   - In the next method we request a sorted list of items, we set the *routing rules* to be **sorted** and add a *query string* parameter - *sortOrder* that can be **'asc' or 'desc'**. To get a sorted item list we can use: https://localhost:5000/api/todo-items/sorted?sortOrder=desc
 
-    ```c#
+    ```csharp
     [HttpGet]
     [Route("sorted")]
     public IActionResult GetAllItemsSorted([FromQuery] string sortOrder)

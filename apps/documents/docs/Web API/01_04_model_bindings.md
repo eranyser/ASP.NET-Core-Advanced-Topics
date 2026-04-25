@@ -8,7 +8,7 @@
 
 - When an HTTP request arrives at our Web API application it is the Controller action method that handles the incoming request. Let's say we want to view employee details whose ID is 2. For this we issue a GET request to the following URL: https://localhost:7156//employee/2
 - Our application attribute route rules as shown in the Controller class bellow, routes this request to **GetEmployeeById(int id)** action method of the EmployeeController:
-  ```c#
+  ```csharp
   [HttpGet]
   [Route("{id:int}", Name = "GetSpecificEmployee")]
   public IActionResult GetEmployeeById(int id)
@@ -26,7 +26,7 @@
 
 - https://localhost:7156//employee/2?name=John
 - The following *Details(int id, string name)* action method handles the above request URL and maps the value 2 to the id parameter and the value John to the name parameter
-  ```c#
+  ```csharp
   [HttpGet]
   [Route("details/{id:int}")]
   public string Details(int id, string name)
@@ -35,7 +35,7 @@
   }
   ```
 - We can send more than one paremeter as routing parameters: https://localhost:7156//employee/2/John
- ```c#
+ ```csharp
   [HttpGet]
   [Route("details/{id:int}/{name:string}")]
   public string Details(int id, string name)
@@ -58,7 +58,7 @@ Suppose we have form like:
 ![Employee Form](../images/employee_form.png)
 - When we press the Create button we send a POST method with the Employee's properties in a JSON format. The binding will be according the name of the properties, and that is how the JSON will be created.
 - The request arrived to the *AddEmployee([FromBody] Employee newEmployee)* method in the Controller class:
-  ```c#
+  ```csharp
   [HttpPost]
   public IActionResult AddEmployee([FromBody] Employee newEmployee) 
   {

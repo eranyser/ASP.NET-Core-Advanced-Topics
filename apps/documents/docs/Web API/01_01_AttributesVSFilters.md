@@ -7,7 +7,7 @@ In the context of .NET WebAPI, the terms "Attribute" and "Filter" are often rela
 **Attribute:**
 - **Definition:** In .NET WebAPI, attributes are used to add metadata to code elements like classes, methods, or properties. They provide a way to declaratively add information to the code, and this information is then used by the runtime or other components to modify behavior.
 - **Example: HttpGet, HttpPost**, and **Route** are examples of attributes in WebAPI. They are used to define the HTTP method and route for an API endpoint. 
-  ```c#
+  ```csharp
   [HttpGet]
   [Route("api/sample")]
   public IHttpActionResult GetSampleData()
@@ -19,7 +19,7 @@ In the context of .NET WebAPI, the terms "Attribute" and "Filter" are often rela
 - **Definition:** Filters in .NET WebAPI are components that allow you to implement cross-cutting concerns such as logging, exception handling, authentication, and authorization. They are applied to the HTTP request and response processing pipeline.
 - **Types:** There are various types of filters, including Action Filters, Exception Filters, Authorization Filters, and Result Filters.
 - **Example:** An action filter is often used to perform some logic before or after the execution of an action method.
-  ```c#
+  ```csharp
   public class LogActionFilterAttribute : ActionFilterAttribute
   {
       public override void OnActionExecuting(HttpActionContext actionContext)
@@ -41,7 +41,7 @@ In the context of .NET WebAPI, the terms "Attribute" and "Filter" are often rela
   }
   ```
 - **Usage:**
-  ```c#
+  ```csharp
   [LogActionFilter]
   public IHttpActionResult GetSampleData()
   {

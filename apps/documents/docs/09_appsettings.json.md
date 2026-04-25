@@ -28,12 +28,12 @@ The **appsettings.json**, (or **appsettings.***development***.json**) were creat
     ```
     - To access configuration information, we need access to ***IConfiguration service*** provided by the framework. We can get it in several ways two of them are:
     - Read configuration directly from the builder (the simplest way)
-        ```c#
+        ```csharp
         _config = builder.Configuration;
         ```
         while keeping the *_config* variable as a private memeber in the class
     - Let DI inject I_Configuration into a minimal API handler
-      ```c#
+      ```csharp
       app.MapGet("/", (IConfiguration config) => {
           string? configValue = config["MyKey"];
           return configValue;
